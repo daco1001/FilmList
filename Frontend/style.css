@@ -1,89 +1,112 @@
 body {
-   display: flex;
-   align-items: center;  
-   justify-content: center; 
-   height: 100vh;  
-   margin: 0;      
-   background: #f5f5f5; 
+    font-family: 'Montserrat', sans-serif;
+    background: #1c1c1c;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px;
 }
 
-#logo{
-    position: absolute;
-    top: 5px; 
-    left: 20px;   
+header {
+    margin-bottom: 20px;
 }
 
-.caja1{
-   display: flex;
-   
-   justify-content: center;
-   background: rgb(155, 149, 149);
-   padding: 20px;
-   border-radius: 10px;
-   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-   width: 40%;
-   min-height: 60%;
-
+.caja1 {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
 }
-.caja1 h1{
+
+h1 {
     text-align: center;
-   margin-bottom: 50px; 
-   font-family: Arial, sans-serif;
-   color: #000000;
-   font-family:'Montserrat',sans-serif;
-   font-weight: 700px;
-
+    margin-bottom: 20px;
 }
 
-.agreagado {
-   display: flex;
-   align-items: center; 
-   gap: 10px;  
-
+.task-form {
+    margin-bottom: 20px;
 }
 
-
-.agreagado textarea {
-   flex: 1;               
-   padding: 15px;
-   border-radius: 8px;
-   resize: none;     
-   width: 350px;
-   height: 10px;   
+textarea {
+    width: 80%;
+    height: 40px;
+    resize: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
 }
 
-.agreagado input[type="button"] {
-   padding: 10px 15px;
-   background: #007bff;
-   color: white;
-   border: none;
-   border-radius: 8px;
-   cursor: pointer;
-   font-size: 18px;
-   font-weight: bold;
+#addBtn {
+    width: 40px;
+    height: 40px;
+    background: #ff4757;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#addBtn:hover {
+    background: #e84118;
 }
 
-.agreagado input[type="button"]:hover {
-   background: #0056b3;
+.filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.filters button {
+    background: #444;
+    border: none;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+.filters button.active {
+    background: #ff4757;
 }
 
-.filtro{
- display: flexbox;
- justify-content: center; 
- gap: 10px;               
- margin: 20px 0;
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-
-.filtros .filtro {
-  padding: 10px 50px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
+.task {
+    background: #3a3a3a;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.filtros .filtro:hover{
-background: #0056b3;
+.task .title {
+    flex: 1;
+}
+.task .title.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+.actions button {
+    background: #555;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+.actions .done {
+    background: #27ae60;
+}
+.actions .delete {
+    background: #c0392b;
 }

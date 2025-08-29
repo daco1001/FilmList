@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FilmList</title>
     <link rel="stylesheet" href="style.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
-<header>
-    <div id="logo">
-        <img src="FilmList_logo.png" alt="FilmList_logo" width="150 px">
-</header>
 <body>
-    </div>
-    <div class="caja1">
-    <section class="box">
-        <h1>FilmList</h1>
-        <div class="agreagado">
-            <textarea  name="agregar pelicula" placeholder="Agrega tu pelicula" ></textarea>
-            <input type="button" value="+" >  
+    <header>
+        <div id="logo">
+            <img src="FilmList_logo.png" alt="FilmList_logo" width="150px">
         </div>
-    <section class="filtros">
-        <button class="filtro todas" data-filter="all">Todas</button>
-        <button class="filtro" data-filter="pending">Pendientes</button>
-        <button class="filtro">Completadas</button>
-    </section>
-        <ul id="lista_peliculas">
-    </section>
+    </header>
+
+    <div class="caja1">
+        <section class="task-form">
+            <h1>FilmList</h1>
+            <div class="agreagado">
+                <textarea id="taskInput" placeholder="Agrega tu película"></textarea>
+                <input id="addBtn" type="button" value="+">  
+            </div>
+        </section>
+
+        <section class="filters">
+            <button class="filter active" data-filter="all">Todas</button>
+            <button class="filter" data-filter="pending">Pendientes</button>
+            <button class="filter" data-filter="done">Completadas</button>
+        </section>
+
+        <ul id="taskList" class="task-list"></ul>
     </div>
-    <style></style>
+
+    <script src="app.js"></script>
 </body>
 </html>

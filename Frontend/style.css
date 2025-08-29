@@ -17,7 +17,7 @@ body {
    display: flex;
    
    justify-content: center;
-   background: rgb(94, 89, 89);
+   background: rgb(155, 149, 149);
    padding: 20px;
    border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -35,7 +35,8 @@ body {
 
 .agreagado {
    display: flex;
-   align-items: center;   
+   align-items: center; 
+   gap: 10px;  
 
 }
 
@@ -62,4 +63,25 @@ body {
 
 .agreagado input[type="button"]:hover {
    background: #0056b3;
+}
+
+.filtro{
+ display: flexbox;
+ justify-content: center; 
+ gap: 10px;               
+ margin: 20px 0;
+}
+
+.filtros .filtro {
+  padding: 10px 50px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filtros .filtro:hover{
+background: #0056b3;
 }

@@ -1,7 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #1c1c1c;
-    color: #fff;
+    background: #f5f7fa;
+    color: #333333;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,46 +15,58 @@ header {
 }
 
 .caja1 {
-    background: #2a2a2a;
+    background: #ffffff;
     padding: 20px;
     border-radius: 20px;
-    width: 400px;
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
+    width: 420px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    align-items: center;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #4CAF50;
 }
 
 .task-form {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.agreagado {
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    gap: 10px;             
 }
 
 textarea {
-    width: 80%;
+    width: 70%;
     height: 40px;
     resize: none;
     padding: 10px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid #ccc;
     font-size: 14px;
+    margin-bottom: 10px;
+    flex: 1;
 }
 
 #addBtn {
-    width: 40px;
-    height: 40px;
-    background: #ff4757;
+    width: 45px;
+    height: 45px;
+    background: #4CAF50;
     border: none;
     border-radius: 50%;
     color: white;
-    font-size: 22px;
-    margin-left: 10px;
+    font-size: 24px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.3s;
 }
 #addBtn:hover {
-    background: #e84118;
+    background: #45a049;
 }
 
 .filters {
@@ -62,16 +74,18 @@ textarea {
     margin-bottom: 20px;
 }
 .filters button {
-    background: #444;
+    background: #e0e0e0;
     border: none;
     padding: 8px 15px;
     margin: 5px;
     border-radius: 8px;
-    color: white;
+    color: #333333;
     cursor: pointer;
+    transition: background 0.2s;
 }
 .filters button.active {
-    background: #ff4757;
+    background: #4CAF50;
+    color: #fff;
 }
 
 .task-list {
@@ -80,33 +94,38 @@ textarea {
     margin: 0;
 }
 .task {
-    background: #3a3a3a;
+    background: #fafafa;
     margin: 10px 0;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #ddd;
 }
 .task .title {
     flex: 1;
+    font-size: 15px;
 }
 .task .title.completed {
     text-decoration: line-through;
     opacity: 0.6;
 }
 .actions button {
-    background: #555;
     border: none;
-    padding: 5px 10px;
-    margin-left: 5px;
+    padding: 6px 12px;
+    margin-left: 6px;
     border-radius: 6px;
     color: white;
     cursor: pointer;
+    transition: opacity 0.2s;
+}
+.actions button:hover {
+    opacity: 0.8;
 }
 .actions .done {
-    background: #27ae60;
+    background: #2196F3; 
 }
 .actions .delete {
-    background: #c0392b;
+    background: #f44336; 
 }

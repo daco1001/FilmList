@@ -99,9 +99,16 @@ textarea {
     padding: 12px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     border: 1px solid #ddd;
+    gap: 10px;
+}
+.task img {
+    flex-shrink: 0;
+}
+
+.task p {
+    margin: 5px 0 0;
 }
 .task .title {
     flex: 1;

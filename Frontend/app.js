@@ -35,32 +35,59 @@ function render() {
   }
 
   filtered.forEach(task => {
-    const li = document.createElement("li");
-    li.className = "task";
+  const li = document.createElement("li");
+  li.className = "task";
 
-    const title = document.createElement("span");
-    title.className = "title" + (task.completed ? " completed" : "");
-    title.textContent = task.title;
+  // Contenedor de texto (título + reseña)
+  const content = document.createElement("div");
+  content.style.flex = "1";
 
-    const actions = document.createElement("div");
-    actions.className = "actions";
+  // Título
+  const title = document.createElement("span");
+  title.className = "title" + (task.completed ? " completed" : "");
+  title.textContent = task.title;
 
-    const doneBtn = document.createElement("button");
-    doneBtn.className = "done";
-    doneBtn.textContent = task.completed ? "Desmarcar" : "Completar";
-    doneBtn.onclick = () => toggleTask(task.id);
+  // Reseña
+  const review = document.createElement("p");
+  review.style.fontSize = "12px";
+  review.style.opacity = "0.8";
+  review.textContent = task.review ? task.review : "Sin reseña disponible";
 
-    const delBtn = document.createElement("button");
-    delBtn.className = "delete";
-    delBtn.textContent = "Eliminar";
-    delBtn.onclick = () => deleteTask(task.id);
+  content.appendChild(title);
+  content.appendChild(review);
 
-    actions.appendChild(doneBtn);
-    actions.appendChild(delBtn);
-    li.appendChild(title);
-    li.appendChild(actions);
-    els.list.appendChild(li);
-  });
+  // Imagen (póster si existe)
+  if (task.poster) {
+    const img = document.createElement("img");
+    img.src = task.poster;
+    img.style.width = "50px";
+    img.style.borderRadius = "8px";
+    img.style.marginRight = "10px";
+    li.appendChild(img);
+  }
+
+  // Botones de acción
+  const actions = document.createElement("div");
+  actions.className = "actions";
+
+  const doneBtn = document.createElement("button");
+  doneBtn.className = "done";
+  doneBtn.textContent = task.completed ? "Desmarcar" : "Completar";
+  doneBtn.onclick = () => toggleTask(task.id);
+
+  const delBtn = document.createElement("button");
+  delBtn.className = "delete";
+  delBtn.textContent = "Eliminar";
+  delBtn.onclick = () => deleteTask(task.id);
+
+  actions.appendChild(doneBtn);
+  actions.appendChild(delBtn);
+
+  // Ensamblar <li>
+  li.appendChild(content);
+  li.appendChild(actions);
+  els.list.appendChild(li);
+});
 }
 
 // 6) Obtener tareas
@@ -135,4 +162,3 @@ els.filters.forEach(btn => {
 
 // 11) Inicializar
 fetchTasks();
-
